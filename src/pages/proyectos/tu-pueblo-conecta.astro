@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ImageCarousel from '../../components/ImageCarousel.astro';
+---
+
+<Layout title="Tu Pueblo Conecta - David Roger" description="Aplicación para mejorar la comunicación entre el ayuntamiento y sus ciudadanos con Angular, Android nativo, Swift y Firebase.">
+  <main class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <!-- Hero del proyecto -->
+    <section class="py-24 max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <a href="/#proyectos" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mb-8 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Volver a Proyectos
+        </a>
+        
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Tu Pueblo Conecta</h1>
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          Plataforma integral que conecta a los ciudadanos con su ayuntamiento, facilitando la comunicación, participación y acceso a servicios municipales.
+        </p>
+        
+        <!-- Tags de tecnología con gradientes -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <span class="px-4 py-2 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full text-sm font-semibold shadow-lg">Angular</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-semibold shadow-lg">Android Nativo</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full text-sm font-semibold shadow-lg">Swift</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full text-sm font-semibold shadow-lg">Firebase</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-purple-500 to-violet-500 text-white rounded-full text-sm font-semibold shadow-lg">Comunicación Municipal</span>
+        </div>
+      </div>
+
+      <!-- Carrusel de imágenes del proyecto -->
+      <div class="glass-effect rounded-2xl p-4 mb-16">
+        <div class="h-[500px] md:h-[600px] lg:h-[700px]">
+          <ImageCarousel 
+            images={[
+              "/images/tu-pueblo-conecta-1.png",
+              "/images/tu-pueblo-conecta-2.png", 
+              "/images/tu-pueblo-conecta-3.png",
+              "/images/tu-pueblo-conecta-4.png",
+              "/images/tu-pueblo-conecta-5.png"
+            ]}
+            projectName="Tu Pueblo Conecta"
+          />
+        </div>
+      </div>
+
+      <!-- Descripción detallada -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Descripción principal -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="glass-effect rounded-2xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-200">Descripción del Proyecto</h2>
+            <div class="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p>
+                <strong>Tu Pueblo Conecta</strong> es una plataforma integral diseñada para revolucionar la comunicación entre los ayuntamientos y sus ciudadanos. La aplicación facilita el acceso a información municipal, permite realizar trámites online y fomenta la participación ciudadana activa.
+              </p>
+              <p>
+                Desarrollada con tecnologías modernas como Angular para la web, aplicaciones nativas para iOS y Android, y Firebase como backend, garantiza una experiencia fluida y confiable en todas las plataformas. Los ciudadanos pueden mantenerse informados sobre eventos locales, realizar consultas, reportar incidencias y participar en la toma de decisiones municipales.
+              </p>
+            </div>
+          </div>
+
+          <!-- Características principales -->
+          <div class="glass-effect rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">Características Principales</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM9 17H4l5 5v-5zM12 3v3m6.364-.636l-2.121 2.121M21 12h-3M16.95 16.95l-2.121-2.121M12 21v-3m-6.364.636l2.121-2.121M3 12h3M7.05 7.05l2.121 2.121"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Noticias y Eventos</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Información municipal actualizada en tiempo real</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Trámites Online</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Gestión digital de documentos municipales</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Participación Ciudadana</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Consultas públicas y votaciones digitales</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Reporte de Incidencias</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Sistema de reportes y seguimiento</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM9 17H4l5 5v-5zM12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Notificaciones Push</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Alertas importantes en tiempo real</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Servicios Locales</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Directorio de servicios y empresas locales</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información técnica -->
+        <div class="space-y-8">
+          <!-- Stack tecnológico -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Stack Tecnológico</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">A</div>
+                <span class="text-slate-700 dark:text-slate-300">Angular</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center text-white text-sm">🤖</div>
+                <span class="text-slate-700 dark:text-slate-300">Android Nativo</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center text-white text-sm">📱</div>
+                <span class="text-slate-700 dark:text-slate-300">Swift iOS</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center text-white text-sm">🔥</div>
+                <span class="text-slate-700 dark:text-slate-300">Firebase</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impacto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Impacto</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span class="text-slate-700 dark:text-slate-300">Mayor participación ciudadana</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span class="text-slate-700 dark:text-slate-300">Reducción de trámites presenciales</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <span class="text-slate-700 dark:text-slate-300">Transparencia municipal mejorada</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">¿Interesado?</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+              Si tu municipio necesita mejorar la comunicación con los ciudadanos, hablemos.
+            </p>
+            <a href="/#contacto" class="w-full btn-primary text-center">
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

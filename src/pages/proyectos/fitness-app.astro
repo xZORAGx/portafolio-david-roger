@@ -1,0 +1,254 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="App Móvil de Fitness - David Roger" description="Aplicación móvil multiplataforma para seguimiento de ejercicios y nutrición con Flutter, sincronización en tiempo real y comunidad integrada.">
+  <main class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <!-- Hero del proyecto -->
+    <section class="py-24 max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <a href="/#proyectos" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mb-8 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Volver a Proyectos
+        </a>
+        
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">App Móvil de Fitness</h1>
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          Aplicación multiplataforma para seguimiento completo de ejercicios, nutrición y objetivos de fitness con comunidad integrada.
+        </p>
+        
+        <!-- Tags de tecnología -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Flutter</span>
+          <span class="px-4 py-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium">Dart</span>
+          <span class="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium">Firebase</span>
+          <span class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">Google Fit</span>
+          <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">Health Kit</span>
+        </div>
+      </div>
+
+      <!-- Screenshots de la app -->
+      <div class="glass-effect rounded-2xl p-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Screenshot 1 -->
+          <div class="aspect-[9/16] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+            <div class="text-white text-center">
+              <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+              <p class="text-sm font-medium">Dashboard Principal</p>
+            </div>
+          </div>
+          
+          <!-- Screenshot 2 -->
+          <div class="aspect-[9/16] bg-gradient-to-br from-green-500 via-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
+            <div class="text-white text-center">
+              <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <p class="text-sm font-medium">Rutinas de Ejercicio</p>
+            </div>
+          </div>
+          
+          <!-- Screenshot 3 -->
+          <div class="aspect-[9/16] bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 rounded-2xl flex items-center justify-center">
+            <div class="text-white text-center">
+              <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+              <p class="text-sm font-medium">Comunidad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descripción detallada -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Descripción principal -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="glass-effect rounded-2xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-200">Descripción del Proyecto</h2>
+            <div class="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p>
+                La <strong>App Móvil de Fitness</strong> es una aplicación multiplataforma desarrollada con Flutter que proporciona una experiencia completa para el seguimiento de ejercicios, nutrición y objetivos de fitness. La app integra datos de salud del dispositivo y ofrece una plataforma social para motivar a los usuarios.
+              </p>
+              <p>
+                Con sincronización en tiempo real a través de Firebase, los usuarios pueden acceder a sus datos desde cualquier dispositivo y conectar con una comunidad activa de fitness. La aplicación incluye rutinas personalizadas, seguimiento nutricional inteligente y análisis detallados del progreso.
+              </p>
+            </div>
+          </div>
+
+          <!-- Características principales -->
+          <div class="glass-effect rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">Características Principales</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Rutinas Personalizadas</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Ejercicios adaptados a objetivos y nivel de usuario</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Seguimiento Nutricional</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Control de calorías y macronutrientes</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Comunidad Integrada</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Red social para motivación y retos</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Sincronización en la Nube</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Datos sincronizados entre dispositivos</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Integración con Health</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Compatible con Google Fit y Apple Health</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Análisis de Progreso</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Gráficas y métricas detalladas del progreso</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plataformas -->
+          <div class="glass-effect rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">Disponibilidad</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex items-center gap-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4486.9993.9997s-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4486.9993.9997s-.4482.9997-.9993.9997m11.4653-6.02c-.0907-.323-.5651-.653-.995-.653-.9143 0-1.7284.6779-2.1298 1.33-1.2954-1.1998-2.8793-1.8799-4.714-1.8799-1.8361 0-3.4186.6779-4.7126 1.8799-.4014-.653-1.2154-1.33-2.1284-1.33-.4298 0-.9044.33-.995.653-.09.323.1367.653.4504.653.5511 0 .995.4482.995.995 0 .5468-.4439.995-.995.995-.3137 0-.5418.33-.4504.653.0906.323.5651.653.995.653.9129 0 1.727-.6779 2.1284-1.33 1.294 1.1998 2.8765 1.8799 4.7126 1.8799 1.8347 0 3.4186-.6801 4.714-1.8799.4014.653 1.2155 1.33 2.1298 1.33.4299 0 .9043-.33.995-.653.0906-.323-.1367-.653-.4504-.653-.5511 0-.9993-.4482-.9993-.995 0-.5468.4482-.995.9993-.995.3137 0 .541-.33.4504-.653"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200 text-lg">Android</h4>
+                  <p class="text-slate-600 dark:text-slate-400">Google Play Store</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200 text-lg">iOS</h4>
+                  <p class="text-slate-600 dark:text-slate-400">App Store</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información técnica -->
+        <div class="space-y-8">
+          <!-- Stack tecnológico -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Stack Tecnológico</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">FL</div>
+                <span class="text-slate-700 dark:text-slate-300">Flutter</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">DT</div>
+                <span class="text-slate-700 dark:text-slate-300">Dart</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white text-sm">🔥</div>
+                <span class="text-slate-700 dark:text-slate-300">Firebase</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">GF</div>
+                <span class="text-slate-700 dark:text-slate-300">Google Fit</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">HK</div>
+                <span class="text-slate-700 dark:text-slate-300">Health Kit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estado del proyecto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Estado del Proyecto</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Estado:</span>
+                <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium">Beta Testing</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Lanzamiento:</span>
+                <span class="text-slate-700 dark:text-slate-300 font-medium">Q3 2025</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Plataformas:</span>
+                <span class="text-slate-700 dark:text-slate-300 font-medium">iOS + Android</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">¿Interesado?</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+              Si quieres formar parte del beta testing o tienes una idea similar, contactemos.
+            </p>
+            <a href="/#contacto" class="w-full btn-primary text-center">
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

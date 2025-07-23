@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Gestor de Tareas Avanzado - David Roger" description="Aplicación web completa para gestión de proyectos y tareas con Angular, Firebase y análisis de productividad en tiempo real.">
+  <main class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <!-- Hero del proyecto -->
+    <section class="py-24 max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <a href="/#proyectos" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mb-8 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Volver a Proyectos
+        </a>
+        
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Gestor de Tareas Avanzado</h1>
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          Una aplicación web completa construida con Angular para la gestión de proyectos y tareas personales con análisis de productividad.
+        </p>
+        
+        <!-- Tags de tecnología -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <span class="px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-sm font-medium">Angular</span>
+          <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">TypeScript</span>
+          <span class="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium">Firebase</span>
+          <span class="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-medium">Tailwind CSS</span>
+          <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">RxJS</span>
+        </div>
+      </div>
+
+      <!-- Imagen/Screenshot del proyecto -->
+      <div class="glass-effect rounded-2xl p-8 mb-16">
+        <div class="aspect-video bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+          <div class="text-white text-center">
+            <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+            <p class="text-lg font-medium">Screenshot del Gestor de Tareas</p>
+            <p class="text-sm opacity-80">Interfaz principal de la aplicación</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descripción detallada -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Descripción principal -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="glass-effect rounded-2xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-200">Descripción del Proyecto</h2>
+            <div class="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p>
+                El <strong>Gestor de Tareas Avanzado</strong> es una aplicación web moderna desarrollada con Angular que permite a los usuarios organizar y gestionar sus proyectos y tareas de manera eficiente. La aplicación incluye funcionalidades avanzadas como notificaciones en tiempo real, análisis de productividad y sincronización en la nube.
+              </p>
+              <p>
+                Este proyecto fue desarrollado con el objetivo de crear una herramienta integral que combine la simplicidad de uso con funcionalidades avanzadas de gestión de proyectos, utilizando las mejores prácticas de desarrollo web moderno.
+              </p>
+            </div>
+          </div>
+
+          <!-- Características principales -->
+          <div class="glass-effect rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">Características Principales</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Gestión de Tareas</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Crear, editar y organizar tareas con prioridades y fechas límite</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM9 17H4l5 5v-5zM12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Notificaciones en Tiempo Real</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Alertas instantáneas para recordatorios y actualizaciones</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Análisis de Productividad</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Métricas y estadísticas de rendimiento personal</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Sincronización en la Nube</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Datos sincronizados en tiempo real usando Firebase</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información técnica -->
+        <div class="space-y-8">
+          <!-- Stack tecnológico -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Stack Tecnológico</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">A</div>
+                <span class="text-slate-700 dark:text-slate-300">Angular 17</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">TS</div>
+                <span class="text-slate-700 dark:text-slate-300">TypeScript</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white text-sm">🔥</div>
+                <span class="text-slate-700 dark:text-slate-300">Firebase</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">TW</div>
+                <span class="text-slate-700 dark:text-slate-300">Tailwind CSS</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">Rx</div>
+                <span class="text-slate-700 dark:text-slate-300">RxJS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estado del proyecto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Estado del Proyecto</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Estado:</span>
+                <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">En Desarrollo</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Lanzamiento:</span>
+                <span class="text-slate-700 dark:text-slate-300 font-medium">Q2 2025</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Plataforma:</span>
+                <span class="text-slate-700 dark:text-slate-300 font-medium">Web App</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">¿Interesado?</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+              Si tienes preguntas sobre este proyecto o estás interesado en colaborar, no dudes en contactarme.
+            </p>
+            <a href="/#contacto" class="w-full btn-primary text-center">
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

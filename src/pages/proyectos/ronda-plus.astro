@@ -1,0 +1,223 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ImageCarousel from '../../components/ImageCarousel.astro';
+---
+
+<Layout title="Ronda+ - David Roger" description="App social para crear competiciones divertidas con grupos de amigos en la vida real, desarrollada con Android nativo, Swift y Firebase.">
+  <main class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <!-- Hero del proyecto -->
+    <section class="py-24 max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <a href="/#proyectos" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mb-8 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Volver a Proyectos
+        </a>
+        
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Ronda+</h1>
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          App social que conecta grupos de amigos a través de competiciones y retos divertidos en la vida real, alejándose del mundo digital.
+        </p>
+        
+        <!-- Tags de tecnología con gradientes -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <span class="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-semibold shadow-lg">Android Nativo</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full text-sm font-semibold shadow-lg">Swift</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full text-sm font-semibold shadow-lg">Firebase</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-sm font-semibold shadow-lg">Social</span>
+          <span class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full text-sm font-semibold shadow-lg">Gamificación</span>
+        </div>
+      </div>
+
+      <!-- Carrusel de imágenes del proyecto -->
+      <div class="glass-effect rounded-2xl p-4 mb-16">
+        <div class="h-[500px] md:h-[600px] lg:h-[700px]">
+          <ImageCarousel 
+            images={[
+              "/images/ronda-plus-1.png",
+              "/images/ronda-plus-2.png", 
+              "/images/ronda-plus-3.png",
+              "/images/ronda-plus-4.png",
+              "/images/ronda-plus-5.png"
+            ]}
+            projectName="Ronda+"
+          />
+        </div>
+      </div>
+
+      <!-- Descripción detallada -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Descripción principal -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="glass-effect rounded-2xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-200">Descripción del Proyecto</h2>
+            <div class="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p>
+                <strong>Ronda+</strong> es una innovadora aplicación social que busca reconectar a los grupos de amigos a través de competiciones y retos en la vida real. La app gamifica las actividades cotidianas y crea experiencias memorables fuera del mundo digital.
+              </p>
+              <p>
+                Ronda+ fomenta la interacción social cara a cara. Los usuarios pueden crear grupos privados, proponer retos personalizados y competir en rankings locales, todo mientras disfrutan de experiencias auténticas en el mundo real.
+              </p>
+            </div>
+          </div>
+
+          <!-- Características principales -->
+          <div class="glass-effect rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">Características Principales</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Grupos Privados</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Crea grupos exclusivos con tus amigos más cercanos</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Sistema de Rankings</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Compite y sigue tu progreso con tus amigos</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Logros y Badges</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Desbloquea logros por completar retos</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Momentos Compartidos</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Captura y comparte los mejores momentos</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Retos Geolocalizados</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Desafíos basados en ubicación real</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-800 dark:text-slate-200">Eventos Programados</h4>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Organiza encuentros y eventos grupales</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información técnica -->
+        <div class="space-y-8">
+          <!-- Stack tecnológico -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Stack Tecnológico</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center text-white text-sm">🤖</div>
+                <span class="text-slate-700 dark:text-slate-300">Android Nativo</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center text-white text-sm">📱</div>
+                <span class="text-slate-700 dark:text-slate-300">Swift iOS</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center text-white text-sm">🔥</div>
+                <span class="text-slate-700 dark:text-slate-300">Firebase</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xs">CL</div>
+                <span class="text-slate-700 dark:text-slate-300">Cloud Functions</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estado del proyecto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Estado del Proyecto</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Estado:</span>
+                <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium">Beta Testing</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Lanzamiento:</span>
+                <span class="text-slate-700 dark:text-slate-300 font-medium">Q3 2025</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-600 dark:text-slate-400">Beta Users:</span>
+                <span class="text-slate-700 dark:text-slate-300 font-medium">200+ usuarios</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filosofía -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Filosofía</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-start gap-2">
+                <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span class="text-slate-700 dark:text-slate-300">Conexiones reales sobre conexiones virtuales</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span class="text-slate-700 dark:text-slate-300">Experiencias compartidas memorables</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span class="text-slate-700 dark:text-slate-300">Gamificación de la vida cotidiana</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto -->
+          <div class="glass-effect rounded-2xl p-6">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">¿Quieres probar la beta?</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+              Si te interesa formar parte del beta testing o tienes ideas similares, contactemos.
+            </p>
+            <a href="/#contacto" class="w-full btn-primary text-center">
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

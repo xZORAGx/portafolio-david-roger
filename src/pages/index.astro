@@ -1,11 +1,89 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Experience from '../components/Experience.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
+<Layout 
+  title="David Roger | Desarrollador de Software" 
+  description="Portafolios de David Roger, desarrollador de software con experiencia en Angular, Java, iOS, Android y Firebase."
+>
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex flex-col items-center justify-center text-center max-w-6xl mx-auto px-4 relative overflow-hidden">
+      <!-- Elementos decorativos de fondo -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-float"></div>
+      <div class="absolute top-40 right-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-float" style="animation-delay: 2s;"></div>
+      <div class="absolute bottom-40 left-20 w-24 h-24 bg-pink-500/10 rounded-full blur-xl animate-float" style="animation-delay: 4s;"></div>
+      
+      <!-- Contenido principal -->
+      <div class="relative z-10 animate-fade-in">
+        <!-- Avatar/Logo -->
+        <div class="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl animate-bounce-slow">
+          DR
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight pb-6 gradient-text animate-slide-up">
+          David Roger
+        </h1>
+        
+        <div class="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-6 max-w-3xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+          <span class="block mb-2">Desarrollador de Software con experiencia en <span class="font-bold text-blue-600 dark:text-blue-400">Grupo Oesía</span></span>
+          <span class="block">Especializado en crear soluciones robustas para web con <span class="font-semibold text-sky-600 dark:text-sky-400">Angular</span> y plataformas móviles.</span>
+          <span class="block">Experto en arquitecturas serverless con <span class="font-semibold text-orange-600 dark:text-orange-400">Firebase</span>.</span>
+        </div>
+        
+        <!-- Indicadores de tecnologías -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 animate-slide-up" style="animation-delay: 0.4s;">
+          <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">Angular</span>
+          <span class="px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-full text-sm font-medium">Java</span>
+          <span class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">Android</span>
+          <span class="px-4 py-2 bg-gray-100 dark:bg-gray-900/30 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium">iOS</span>
+          <span class="px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm font-medium">Firebase</span>
+        </div>
+        
+        <!-- Botones de acción -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up" style="animation-delay: 0.6s;">
+          <a 
+            href="#contacto"
+            class="btn-primary"
+          >
+            <span class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              Contacta conmigo
+            </span>
+          </a>
+          <a 
+            href="#proyectos"
+            class="btn-secondary"
+          >
+            <span class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+              Ver mis proyectos
+            </span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-slate-400 dark:border-slate-500 rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-slate-400 dark:bg-slate-500 rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
 
-<Layout>
-	<Welcome />
+    <Experience />
+    <Skills />
+    <Projects />
+    <Contact />
+  </main>
+  
+  <Footer />
 </Layout>
