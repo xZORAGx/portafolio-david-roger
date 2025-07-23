@@ -8,19 +8,21 @@ const { images, projectName } = Astro.props;
 const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
-<div class="relative w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 rounded-2xl overflow-hidden touch-pan-x">
+<div class="relative w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 rounded-2xl overflow-hidden">
+  <!-- Carousel container -->
   <div class="carousel-container relative w-full h-full" data-carousel-id={carouselId}>
+    <!-- Images -->
     <div class="carousel-track flex transition-transform duration-500 ease-in-out h-full" id={`carousel-track-${carouselId}`} style={`width: ${images.length * 100}%`}>
       {images.map((image, index) => (
         <div class="carousel-slide flex-shrink-0 relative" style={`width: ${100 / images.length}%`}>
           <div class="w-full h-full relative overflow-hidden">
+            <!-- Real image when available -->
             <img 
               src={image} 
               alt={`${projectName} - Imagen ${index + 1}`}
-              class="w-full h-full object-contain bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 select-none"
+              class="w-full h-full object-contain bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               loading="lazy"
-              draggable="false"
             />
             
             <!-- Fallback placeholder -->
@@ -55,30 +57,32 @@ const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
       ))}
     </div>
 
+    <!-- Navigation arrows -->
     <button 
-      class="carousel-btn absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-2 sm:p-4 rounded-full transition-all duration-300 z-20 group touch-manipulation"
+      class="carousel-btn absolute left-6 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-4 rounded-full transition-all duration-300 z-20 group"
       onclick={`previousSlide('${carouselId}')`}
       aria-label="Imagen anterior"
     >
-      <svg class="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
       </svg>
     </button>
 
     <button 
-      class="carousel-btn absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-2 sm:p-4 rounded-full transition-all duration-300 z-20 group touch-manipulation"
+      class="carousel-btn absolute right-6 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-4 rounded-full transition-all duration-300 z-20 group"
       onclick={`nextSlide('${carouselId}')`}
       aria-label="Siguiente imagen"
     >
-      <svg class="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
       </svg>
     </button>
 
-    <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-4 z-20">
+    <!-- Dots indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4 z-20">
       {images.map((_, index) => (
         <button 
-          class={`carousel-dot w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 touch-manipulation ${index === 0 ? 'bg-white scale-125' : 'bg-white/50'}`}
+          class={`carousel-dot w-4 h-4 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white scale-125' : 'bg-white/50'}`}
           onclick={`goToSlide('${carouselId}', ${index})`}
           aria-label={`Ir a imagen ${index + 1}`}
         ></button>
@@ -92,7 +96,7 @@ const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
 
   window.initCarousel = function(carouselId, totalSlides) {
     if (window.carouselInstances[carouselId]) {
-      return;
+      return; // Ya está inicializado
     }
 
     const instance = {
@@ -155,9 +159,11 @@ const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
       updateCarousel();
     };
 
+    // Initialize
     updateCarousel();
     startAutoSlide();
     
+    // Add hover events
     if (instance.container) {
       instance.container.addEventListener('mouseenter', pauseAutoSlide);
       instance.container.addEventListener('mouseleave', startAutoSlide);
@@ -184,20 +190,26 @@ const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
     }
   };
 
+  // Auto-initialize when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
     initializeAllCarousels();
   });
 
+  // Also initialize immediately if DOM is already loaded
   if (document.readyState === 'loading') {
+    // DOM hasn't finished loading yet
   } else {
+    // DOM is already loaded
     setTimeout(initializeAllCarousels, 100);
   }
 
+  // Function to initialize all visible carousels
   function initializeAllCarousels() {
     document.querySelectorAll('[data-carousel-id]').forEach(container => {
       const carouselId = container.getAttribute('data-carousel-id');
       const slides = container.querySelectorAll('.carousel-slide');
       if (carouselId && slides.length > 0 && !window.carouselInstances[carouselId]) {
+        // Check if the carousel is visible
         const isVisible = !container.closest('.hidden') && container.offsetWidth > 0;
         if (isVisible) {
           window.initCarousel(carouselId, slides.length);
@@ -206,6 +218,7 @@ const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
     });
   }
 
+  // Initialize carousels when they become visible
   window.reinitializeCarousels = function() {
     setTimeout(() => {
       initializeAllCarousels();
