@@ -30,9 +30,30 @@ import ImageCarousel from '../../components/ImageCarousel.astro';
         </div>
       </div>
 
-      <!-- Carrusel de imágenes del proyecto -->
-      <div class="glass-effect rounded-2xl p-4 mb-16">
-        <div class="h-[500px] md:h-[600px] lg:h-[700px]">
+      <!-- Carrusel de imágenes del proyecto con selector -->
+      <div class="glass-effect rounded-2xl p-6 mb-16">
+        <!-- Selector de plataforma -->
+        <div class="flex justify-center mb-6">
+          <div class="bg-slate-100 dark:bg-slate-800 p-1 rounded-lg flex gap-1">
+            <button 
+              id="mobile-tab" 
+              class="platform-tab active px-6 py-3 rounded-lg font-medium transition-all duration-300 text-sm"
+              data-platform="mobile"
+            >
+              📱 Aplicación Móvil
+            </button>
+            <button 
+              id="web-tab" 
+              class="platform-tab px-6 py-3 rounded-lg font-medium transition-all duration-300 text-sm"
+              data-platform="web"
+            >
+              🌐 Panel Web
+            </button>
+          </div>
+        </div>
+
+        <!-- Carrusel para Aplicación Móvil -->
+        <div id="mobile-carousel" class="carousel-container h-[500px] md:h-[600px] lg:h-[700px]">
           <ImageCarousel 
             images={[
               "/images/tu-pueblo-conecta-1.png",
@@ -41,7 +62,21 @@ import ImageCarousel from '../../components/ImageCarousel.astro';
               "/images/tu-pueblo-conecta-4.png",
               "/images/tu-pueblo-conecta-5.png"
             ]}
-            projectName="Tu Pueblo Conecta"
+            projectName="Tu Pueblo Conecta - Aplicación Móvil"
+          />
+        </div>
+
+        <!-- Carrusel para Panel Web -->
+        <div id="web-carousel" class="carousel-container hidden h-[500px] md:h-[600px] lg:h-[700px]">
+          <ImageCarousel 
+            images={[
+              "/images/tu-pueblo-conecta-web-1.png",
+              "/images/tu-pueblo-conecta-web-2.png", 
+              "/images/tu-pueblo-conecta-web-3.png",
+              "/images/tu-pueblo-conecta-web-4.png",
+              "/images/tu-pueblo-conecta-web-5.png"
+            ]}
+            projectName="Tu Pueblo Conecta - Panel Web"
           />
         </div>
       </div>
@@ -58,6 +93,9 @@ import ImageCarousel from '../../components/ImageCarousel.astro';
               </p>
               <p>
                 Desarrollada con tecnologías modernas como Angular para la web, aplicaciones nativas para iOS y Android, y Firebase como backend, garantiza una experiencia fluida y confiable en todas las plataformas. Los ciudadanos pueden mantenerse informados sobre eventos locales, realizar consultas, reportar incidencias y participar en la toma de decisiones municipales.
+              </p>
+              <p>
+                El <strong>panel web administrativo</strong> complementa las aplicaciones móviles como una landing page profesional y centro de gestión municipal. Desde esta plataforma web, los administradores pueden gestionar de manera centralizada todo el contenido que se publica en las aplicaciones móviles, moderar consultas ciudadanas, publicar noticias y eventos, y administrar todos los servicios municipales desde una interfaz intuitiva que optimiza el flujo de trabajo del ayuntamiento.
               </p>
             </div>
           </div>
@@ -143,7 +181,9 @@ import ImageCarousel from '../../components/ImageCarousel.astro';
         </div>
 
         <!-- Información técnica -->
-        <div class="space-y-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Descripción principal (continuación) -->
+        <div class="lg:col-span-2 space-y-8">
           <!-- Stack tecnológico -->
           <div class="glass-effect rounded-2xl p-6">
             <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">Stack Tecnológico</h3>
@@ -201,3 +241,69 @@ import ImageCarousel from '../../components/ImageCarousel.astro';
     </section>
   </main>
 </Layout>
+
+<style>
+  .platform-tab {
+    @apply text-slate-600 dark:text-slate-400;
+  }
+  
+  .platform-tab.active {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg;
+  }
+  
+  .platform-tab:not(.active):hover {
+    @apply bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del DOM
+    const mobileTab = document.getElementById('mobile-tab');
+    const webTab = document.getElementById('web-tab');
+    const mobileCarousel = document.getElementById('mobile-carousel');
+    const webCarousel = document.getElementById('web-carousel');
+
+    if (!mobileTab || !webTab || !mobileCarousel || !webCarousel) return;
+
+    // Función para cambiar de pestaña
+    function switchTab(platform) {
+      if (!mobileTab || !webTab || !mobileCarousel || !webCarousel) return;
+      
+      if (platform === 'mobile') {
+        // Activar pestaña móvil
+        mobileTab.classList.add('active');
+        webTab.classList.remove('active');
+        
+        // Mostrar carrusel móvil, ocultar web
+        mobileCarousel.classList.remove('hidden');
+        webCarousel.classList.add('hidden');
+      } else if (platform === 'web') {
+        // Activar pestaña web
+        webTab.classList.add('active');
+        mobileTab.classList.remove('active');
+        
+        // Mostrar carrusel web, ocultar móvil
+        webCarousel.classList.remove('hidden');
+        mobileCarousel.classList.add('hidden');
+      }
+    }
+
+    // Event listeners para las pestañas
+    mobileTab.addEventListener('click', () => {
+      switchTab('mobile');
+    });
+    
+    webTab.addEventListener('click', () => {
+      switchTab('web');
+      // Usar la función global para reinicializar carruseles
+      setTimeout(() => {
+        if (window.reinitializeCarousels) {
+          window.reinitializeCarousels();
+        }
+      }, 150);
+    });
+
+    // Inicializar con aplicación móvil por defecto (ya está visible)
+  });
+</script>

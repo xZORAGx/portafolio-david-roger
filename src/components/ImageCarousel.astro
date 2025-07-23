@@ -5,15 +5,16 @@ interface Props {
 }
 
 const { images, projectName } = Astro.props;
+const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
 <div class="relative w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 rounded-2xl overflow-hidden">
   <!-- Carousel container -->
-  <div class="carousel-container relative w-full h-full">
+  <div class="carousel-container relative w-full h-full" data-carousel-id={carouselId}>
     <!-- Images -->
-    <div class="carousel-track flex transition-transform duration-500 ease-in-out h-full" id="carousel-track">
+    <div class="carousel-track flex transition-transform duration-500 ease-in-out h-full" id={`carousel-track-${carouselId}`} style={`width: ${images.length * 100}%`}>
       {images.map((image, index) => (
-        <div class="carousel-slide flex-shrink-0 w-full h-full relative">
+        <div class="carousel-slide flex-shrink-0 relative" style={`width: ${100 / images.length}%`}>
           <div class="w-full h-full relative overflow-hidden">
             <!-- Real image when available -->
             <img 
@@ -59,7 +60,7 @@ const { images, projectName } = Astro.props;
     <!-- Navigation arrows -->
     <button 
       class="carousel-btn absolute left-6 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-4 rounded-full transition-all duration-300 z-20 group"
-      onclick="previousSlide()"
+      onclick={`previousSlide('${carouselId}')`}
       aria-label="Imagen anterior"
     >
       <svg class="w-6 h-6 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +70,7 @@ const { images, projectName } = Astro.props;
 
     <button 
       class="carousel-btn absolute right-6 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-4 rounded-full transition-all duration-300 z-20 group"
-      onclick="nextSlide()"
+      onclick={`nextSlide('${carouselId}')`}
       aria-label="Siguiente imagen"
     >
       <svg class="w-6 h-6 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,85 +83,147 @@ const { images, projectName } = Astro.props;
       {images.map((_, index) => (
         <button 
           class={`carousel-dot w-4 h-4 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white scale-125' : 'bg-white/50'}`}
-          onclick={`goToSlide(${index})`}
+          onclick={`goToSlide('${carouselId}', ${index})`}
           aria-label={`Ir a imagen ${index + 1}`}
         ></button>
       ))}
-    </div>
-
-    <!-- Progress bar -->
-    <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-10">
-      <div class="h-full bg-white transition-all duration-4000 ease-linear" style="width: 20%"></div>
     </div>
   </div>
 </div>
 
 <script is:inline>
-  window.addEventListener('DOMContentLoaded', function() {
-    let currentSlide = 0;
-    const totalSlides = 5; // Siempre 5 slides
-    const track = document.getElementById('carousel-track');
-    const dots = document.querySelectorAll('.carousel-dot');
-    let autoSlideInterval;
+  window.carouselInstances = window.carouselInstances || {};
+
+  window.initCarousel = function(carouselId, totalSlides) {
+    if (window.carouselInstances[carouselId]) {
+      return; // Ya está inicializado
+    }
+
+    const instance = {
+      currentSlide: 0,
+      totalSlides: totalSlides,
+      autoSlideInterval: null,
+      track: document.getElementById(`carousel-track-${carouselId}`),
+      container: document.querySelector(`[data-carousel-id="${carouselId}"]`)
+    };
 
     function updateCarousel() {
-      if (track) {
-        track.style.transform = 'translateX(-' + (currentSlide * 20) + '%)';
+      if (instance.track) {
+        const translateX = -(instance.currentSlide * (100 / instance.totalSlides));
+        instance.track.style.transform = `translateX(${translateX}%)`;
       }
       
       // Update dots
-      for (let i = 0; i < dots.length; i++) {
-        if (i === currentSlide) {
-          dots[i].classList.remove('bg-white/50');
-          dots[i].classList.add('bg-white', 'scale-125');
-        } else {
-          dots[i].classList.remove('bg-white', 'scale-125');
-          dots[i].classList.add('bg-white/50');
-        }
+      const dots = instance.container?.querySelectorAll('.carousel-dot');
+      if (dots) {
+        dots.forEach((dot, index) => {
+          if (index === instance.currentSlide) {
+            dot.classList.remove('bg-white/50');
+            dot.classList.add('bg-white', 'scale-125');
+          } else {
+            dot.classList.remove('bg-white', 'scale-125');
+            dot.classList.add('bg-white/50');
+          }
+        });
       }
     }
 
-    window.nextSlide = function() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateCarousel();
-    };
-
-    window.previousSlide = function() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateCarousel();
-    };
-
-    window.goToSlide = function(index) {
-      currentSlide = index;
-      updateCarousel();
-    };
-
     function startAutoSlide() {
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
+      if (instance.autoSlideInterval) {
+        clearInterval(instance.autoSlideInterval);
       }
-      autoSlideInterval = setInterval(function() {
-        window.nextSlide();
+      instance.autoSlideInterval = setInterval(() => {
+        instance.currentSlide = (instance.currentSlide + 1) % instance.totalSlides;
+        updateCarousel();
       }, 4000);
     }
 
     function pauseAutoSlide() {
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
+      if (instance.autoSlideInterval) {
+        clearInterval(instance.autoSlideInterval);
       }
     }
+
+    instance.nextSlide = function() {
+      instance.currentSlide = (instance.currentSlide + 1) % instance.totalSlides;
+      updateCarousel();
+    };
+
+    instance.previousSlide = function() {
+      instance.currentSlide = (instance.currentSlide - 1 + instance.totalSlides) % instance.totalSlides;
+      updateCarousel();
+    };
+
+    instance.goToSlide = function(index) {
+      instance.currentSlide = index;
+      updateCarousel();
+    };
 
     // Initialize
     updateCarousel();
     startAutoSlide();
     
     // Add hover events
-    const container = document.querySelector('.carousel-container');
-    if (container) {
-      container.addEventListener('mouseenter', pauseAutoSlide);
-      container.addEventListener('mouseleave', startAutoSlide);
+    if (instance.container) {
+      instance.container.addEventListener('mouseenter', pauseAutoSlide);
+      instance.container.addEventListener('mouseleave', startAutoSlide);
     }
+
+    window.carouselInstances[carouselId] = instance;
+  };
+
+  window.nextSlide = function(carouselId) {
+    if (window.carouselInstances[carouselId]) {
+      window.carouselInstances[carouselId].nextSlide();
+    }
+  };
+
+  window.previousSlide = function(carouselId) {
+    if (window.carouselInstances[carouselId]) {
+      window.carouselInstances[carouselId].previousSlide();
+    }
+  };
+
+  window.goToSlide = function(carouselId, index) {
+    if (window.carouselInstances[carouselId]) {
+      window.carouselInstances[carouselId].goToSlide(index);
+    }
+  };
+
+  // Auto-initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    initializeAllCarousels();
   });
+
+  // Also initialize immediately if DOM is already loaded
+  if (document.readyState === 'loading') {
+    // DOM hasn't finished loading yet
+  } else {
+    // DOM is already loaded
+    setTimeout(initializeAllCarousels, 100);
+  }
+
+  // Function to initialize all visible carousels
+  function initializeAllCarousels() {
+    document.querySelectorAll('[data-carousel-id]').forEach(container => {
+      const carouselId = container.getAttribute('data-carousel-id');
+      const slides = container.querySelectorAll('.carousel-slide');
+      if (carouselId && slides.length > 0 && !window.carouselInstances[carouselId]) {
+        // Check if the carousel is visible
+        const isVisible = !container.closest('.hidden') && container.offsetWidth > 0;
+        if (isVisible) {
+          window.initCarousel(carouselId, slides.length);
+        }
+      }
+    });
+  }
+
+  // Initialize carousels when they become visible
+  window.reinitializeCarousels = function() {
+    setTimeout(() => {
+      initializeAllCarousels();
+    }, 100);
+  };
 </script>
 
 <style>
@@ -173,12 +236,11 @@ const { images, projectName } = Astro.props;
   
   .carousel-track {
     display: flex;
-    width: 500%; /* 5 slides * 100% */
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .carousel-slide {
-    flex: 0 0 20%; /* Each slide takes 20% of the track width (100% / 5) */
+    flex-shrink: 0;
     position: relative;
   }
   
