@@ -266,24 +266,19 @@ import ImageCarousel from '../../components/ImageCarousel.astro';
 
     if (!mobileTab || !webTab || !mobileCarousel || !webCarousel) return;
 
-    // Función para cambiar de pestaña
-    function switchTab(platform) {
+    function switchTab(platform: string) {
       if (!mobileTab || !webTab || !mobileCarousel || !webCarousel) return;
       
       if (platform === 'mobile') {
-        // Activar pestaña móvil
         mobileTab.classList.add('active');
         webTab.classList.remove('active');
         
-        // Mostrar carrusel móvil, ocultar web
         mobileCarousel.classList.remove('hidden');
         webCarousel.classList.add('hidden');
       } else if (platform === 'web') {
-        // Activar pestaña web
         webTab.classList.add('active');
         mobileTab.classList.remove('active');
         
-        // Mostrar carrusel web, ocultar móvil
         webCarousel.classList.remove('hidden');
         mobileCarousel.classList.add('hidden');
       }
@@ -296,14 +291,12 @@ import ImageCarousel from '../../components/ImageCarousel.astro';
     
     webTab.addEventListener('click', () => {
       switchTab('web');
-      // Usar la función global para reinicializar carruseles
       setTimeout(() => {
-        if (window.reinitializeCarousels) {
-          window.reinitializeCarousels();
+        if ((window as any).reinitializeCarousels) {
+          (window as any).reinitializeCarousels();
         }
       }, 150);
     });
 
-    // Inicializar con aplicación móvil por defecto (ya está visible)
   });
 </script>

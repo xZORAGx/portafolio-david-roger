@@ -1,8 +1,8 @@
-/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -45,11 +45,11 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base;
   }
 
   .btn-secondary {
-    @apply bg-white/10 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-300 dark:border-slate-600 font-semibold py-3 px-6 rounded-full hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-300 hover:scale-105;
+    @apply bg-white/10 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-300 dark:border-slate-600 font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-full hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-300 hover:scale-105 text-sm sm:text-base;
   }
 
   .card-hover {
@@ -67,4 +67,51 @@
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient 8s ease infinite;
+}
+
+/* Utilidades móviles adicionales */
+@media (max-width: 640px) {
+  .glass-effect {
+    @apply backdrop-blur-sm;
+  }
+  
+  .card-hover:hover {
+    @apply transform-none;
+  }
+  
+  /* Mejorar legibilidad en móviles */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent;
+  }
+}
+
+/* Mejoras para touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-105:hover {
+    @apply transform-none;
+  }
+  
+  .group:hover .group-hover\:scale-110 {
+    @apply transform-none;
+  }
+  
+  /* Botones más grandes para touch */
+  .btn-primary, .btn-secondary {
+    @apply py-3 px-6 min-h-[44px];
+  }
+}
+
+/* Animaciones más suaves en móviles */
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce-slow,
+  .animate-slide-up,
+  .animate-fade-in {
+    @apply animate-none;
+  }
+  
+  .transition-all,
+  .transition-transform,
+  .transition-colors {
+    @apply transition-none;
+  }
 }
